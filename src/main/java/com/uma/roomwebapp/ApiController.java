@@ -5,6 +5,7 @@
  */
 package com.uma.roomwebapp;
 
+import com.frankmoley.landon.aop.Timed;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class ApiController {
     }
 
     @GetMapping("/rooms")
+    @Timed
     public List<Room> getAllRooms() {
         return roomServices.getAllRooms();
     }
